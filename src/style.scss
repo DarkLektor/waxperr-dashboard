@@ -1,0 +1,50 @@
+:root {
+  --white: #FFFFFF;
+  --black: #1A1A1A;
+  --dark-grey: #212121;
+  --light-grey: #95959A80;
+  --green: #20CE70;
+  --orange: #EC7A2A;
+  --red: #EF5858;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--white);
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1920px;
+  padding: 0 40px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 20px;
+  }
+}
+
+.text-gradient {
+  background: #FFFFFF;
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.25) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-warning {
+  color: var(--orange);
+}
+
+.text-danger {
+  color: var(--red);
+}
+
+.text-success {
+  color: var(--green);
+}
