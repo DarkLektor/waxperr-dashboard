@@ -8,26 +8,53 @@ export const useCardsStore = defineStore('cards', {
                 title: 'Uptime',
                 subtitle: 'Uptime over the past 24 hours',
                 label: '97.83%',
-                icon: 'eject'
+                icon: 'eject',
+                image: 'chart.png'
+            },
+            {
+                title: 'Waxpeer online & status',
+                subtitle: ' ',
+                isLongCard: true,
+                longCardItems: [
+                    {
+                        title: '12698',
+                        subtitle: 'extension'
+                    },
+                    {
+                        title: '5898',
+                        subtitle: 'desktop'
+                    },
+                    {
+                        title: '25697',
+                        subtitle: 'mobile'
+                    }
+                ]
             },
             {
                 title: 'Current date',
                 subtitle: 'Current date and time',
                 label: '08.06.2022',
                 icon: 'eject',
-                isLongCard: true
-            },
-            {
-                title: 'Current date',
-                subtitle: 'Current date and time',
-                label: '08.06.2022',
-                icon: 'eject'
+                time: '19:55:20'
             },
             {
                 title: 'Withdrawal status',
                 subtitle: 'Connected cryptocurrencies',
-                // label: '25 sec',
-                icon: 'bitcoin'
+                icon: 'bitcoin',
+                iconLinks: [
+                    {
+                        image: 'tether.png',
+                        link: 'https://darklektor.github.io/portfolio-minimal/'
+                    },
+                    {
+                        image: 'triangle.png',
+                        link: 'https://darklektor.github.io/portfolio-minimal/'
+                    },
+                    {
+                        image: 's-link.png',
+                        link: 'https://darklektor.github.io/portfolio-minimal/'
+                    },
+                ]
             },
             {
                 title: 'Buy items',

@@ -6,16 +6,18 @@
           <use :href="`/sprites.svg#${item.icon}`"></use>
         </svg>
       </i>
-      <h5 class="card-header-title">
+      <h6 class="card-header-title">
         {{ item.title }}
-      </h5>
+      </h6>
     </div>
-    <p class="card-subtitle">
+    <p class="card-subtitle card-small-text text-light-grey">
       {{ item.subtitle }}
     </p>
     <div class="card-body">
-      <span :class="item?.textClass || 'text-gradient'" class="card-label">
-        {{ item.label }}
+      <slot></slot>
+      <span v-if="item.label" :class="item?.textClass || 'text-gradient'"
+            class="card-label card-big-text">
+          {{ item.label }}
       </span>
     </div>
   </div>
@@ -36,6 +38,15 @@ const {item} = defineProps<{ item: CardType }>()
   flex-direction: column;
   gap: 16px;
 
+  &-big-text {
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  &-small-text {
+    font-size: 14px;
+  }
+
   &-header {
     display: flex;
     align-items: center;
@@ -49,7 +60,7 @@ const {item} = defineProps<{ item: CardType }>()
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 4px;
+      padding: 6px;
       border-radius: 50%;
       background: #262626;
       width: 32px;
@@ -64,14 +75,11 @@ const {item} = defineProps<{ item: CardType }>()
     }
 
     &-title {
-      font-weight: 500;
       font-size: 16px;
     }
   }
 
   &-subtitle {
-    font-size: 14px;
-    color: var(--light-grey);
     margin-bottom: 10px;
   }
 
@@ -80,11 +88,33 @@ const {item} = defineProps<{ item: CardType }>()
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
-    font-size: 30px;
     margin-top: auto;
 
-    @media screen and (max-width: 550px) {
+    .card-time {
+      font-size: 20px;
+      color: var(--light-grey);
+      margin-top: 6px;
+    }
+
+    .card-image {
+      object-fit: contain;
+      object-position: bottom right;
+      max-height: 55px;
+      width: 50%;
+      height: 100%;
+    }
+
+  }
+
+  @media screen and (max-width: 550px) {
+    &-big-text {
       font-size: 22px;
+    }
+    &-body {
+      .card-time {
+        font-size: 16px;
+        margin-top: 0;
+      }
     }
   }
 }
